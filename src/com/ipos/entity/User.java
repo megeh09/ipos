@@ -36,7 +36,8 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "User.findByDate", query = "SELECT u FROM User u WHERE u.date = :date"),
     @NamedQuery(name = "User.findByCreatedOn", query = "SELECT u FROM User u WHERE u.createdOn = :createdOn"),
     @NamedQuery(name = "User.findByUpdatedOn", query = "SELECT u FROM User u WHERE u.updatedOn = :updatedOn"),
-    @NamedQuery(name = "User.findByFKcreatedByUserId", query = "SELECT u FROM User u WHERE u.fKcreatedByUserId = :fKcreatedByUserId")})
+    @NamedQuery(name = "User.findByFKcreatedByUserId", query = "SELECT u FROM User u WHERE u.fKcreatedByUserId = :fKcreatedByUserId"),
+    @NamedQuery(name = "User.findUserByUsernameAndPassword", query = "SELECT u FROM User u WHERE u.username = :username AND u.password = :password")})
 public class User implements Serializable {
 
     private static final long serialVersionUID = 1L;

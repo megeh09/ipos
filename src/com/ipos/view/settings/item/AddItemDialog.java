@@ -245,7 +245,7 @@ public class AddItemDialog extends javax.swing.JDialog {
             entity.setDescription(descriptionTextArea.getText());
             entity.setDate(DateUtil.current());
             entity.setFKunitId(((Unit) unitComboBox.getSelectedItem()).getId());
-            entity.setFKcreatedByUserId(IPOS.currentUser);
+            entity.setFKcreatedByUserId(IPOS.currentUser.getId());
 
             controller.create(entity);
 

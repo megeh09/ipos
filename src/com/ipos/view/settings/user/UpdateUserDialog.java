@@ -215,8 +215,8 @@ public class UpdateUserDialog extends javax.swing.JDialog {
 
             entity.setFullname(fullnameTextField.getText());
             entity.setUsername(usernameTextField.getText());
-            entity.setPassword(Arrays.toString(passwordPasswordField.getPassword()));
-            entity.setFKcreatedByUserId(IPOS.currentUser);
+            entity.setPassword(controller.getPasswordMd5(Arrays.toString(passwordPasswordField.getPassword())));
+            entity.setFKcreatedByUserId(IPOS.currentUser.getId());
 
             controller.edit(entity);
 

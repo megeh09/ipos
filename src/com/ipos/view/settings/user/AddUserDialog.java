@@ -9,6 +9,8 @@ import com.ipos.entity.User;
 import com.ipos.helper.util.DateUtil;
 import com.ipos.jpa.controller.UserJpaController;
 import com.ipos.start.IPOS;
+import java.awt.HeadlessException;
+import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -214,16 +216,16 @@ public class AddUserDialog extends javax.swing.JDialog {
 
             entity.setFullname(fullnameTextField.getText());
             entity.setUsername(usernameTextField.getText());
-            entity.setPassword(Arrays.toString(passwordPasswordField.getPassword()));
+            entity.setPassword(controller.getPasswordMd5(Arrays.toString(passwordPasswordField.getPassword())));
             entity.setDate(DateUtil.current());
-            entity.setFKcreatedByUserId(IPOS.currentUser);
+            entity.setFKcreatedByUserId(IPOS.currentUser.getId());
 
             controller.create(entity);
 
             JOptionPane.showMessageDialog(null, "User successfully saved.", "Sucess", JOptionPane.INFORMATION_MESSAGE);
 
             hideThis();
-        } catch (Exception ex) {
+        } catch (HeadlessException | NoSuchAlgorithmException ex) {
             JOptionPane.showMessageDialog(null, "Error, user not saved.", "Failed", JOptionPane.ERROR_MESSAGE);
 
             Logger.getLogger(AddUserDialog.class.getName()).log(Level.SEVERE, null, ex);

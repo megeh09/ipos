@@ -156,7 +156,7 @@ public class AddPersonnelDialog extends javax.swing.JDialog {
         try {
             entity.setFullname(fullnameTextField.getText());
             entity.setDate(DateUtil.current());
-            entity.setFKcreatedByUserId(IPOS.currentUser);
+            entity.setFKcreatedByUserId(IPOS.currentUser.getId());
 
             controller.create(entity);
 

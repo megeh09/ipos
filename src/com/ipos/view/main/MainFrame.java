@@ -18,6 +18,7 @@ import com.ipos.implementation.SupplierImplementation;
 import com.ipos.implementation.UnitImplementation;
 import com.ipos.implementation.UserImplementation;
 import com.ipos.jpa.connection.ConnectionPersistence;
+import com.ipos.start.IPOS;
 import com.sun.java.swing.plaf.windows.WindowsTabbedPaneUI;
 import java.awt.Color;
 import java.awt.FontMetrics;
@@ -209,7 +210,7 @@ public class MainFrame extends javax.swing.JFrame {
         mainPanel = new javax.swing.JPanel();
         topPanel = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        currentUserLabel = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         centerPanel = new javax.swing.JPanel();
@@ -1705,22 +1706,23 @@ public class MainFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("VL Motorparts - IPOS");
+        setPreferredSize(new java.awt.Dimension(1024, 600));
 
         mainPanel.setBackground(new java.awt.Color(255, 255, 255));
-        mainPanel.setPreferredSize(new java.awt.Dimension(1200, 600));
+        mainPanel.setPreferredSize(new java.awt.Dimension(1024, 600));
         mainPanel.setLayout(new java.awt.BorderLayout());
 
         topPanel.setBackground(new java.awt.Color(232, 236, 239));
         topPanel.setForeground(new java.awt.Color(25, 32, 42));
-        topPanel.setPreferredSize(new java.awt.Dimension(1200, 100));
+        topPanel.setPreferredSize(new java.awt.Dimension(1024, 100));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(46, 46, 46));
         jLabel3.setText("Welcome:");
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 173, 208));
-        jLabel4.setText("Administrator");
+        currentUserLabel.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        currentUserLabel.setForeground(new java.awt.Color(0, 173, 208));
+        currentUserLabel.setText("Administrator");
 
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/ipos/resources/image/img-logo.png"))); // NOI18N
@@ -1742,8 +1744,8 @@ public class MainFrame extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel4))
-                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 922, Short.MAX_VALUE))
+                        .addComponent(currentUserLabel))
+                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 746, Short.MAX_VALUE))
                 .addContainerGap())
         );
         topPanelLayout.setVerticalGroup(
@@ -1755,14 +1757,14 @@ public class MainFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(topPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE))
+                    .addComponent(currentUserLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
         mainPanel.add(topPanel, java.awt.BorderLayout.NORTH);
 
         centerPanel.setBackground(new java.awt.Color(255, 255, 255));
-        centerPanel.setPreferredSize(new java.awt.Dimension(1200, 500));
+        centerPanel.setPreferredSize(new java.awt.Dimension(1024, 500));
         centerPanel.setLayout(new java.awt.BorderLayout());
 
         leftPanel.setBackground(new java.awt.Color(47, 64, 80));
@@ -1960,13 +1962,13 @@ public class MainFrame extends javax.swing.JFrame {
         centerPanel.add(leftPanel, java.awt.BorderLayout.WEST);
 
         rightPanel.setBackground(new java.awt.Color(255, 255, 255));
-        rightPanel.setPreferredSize(new java.awt.Dimension(950, 500));
+        rightPanel.setPreferredSize(new java.awt.Dimension(744, 500));
         rightPanel.setLayout(new java.awt.BorderLayout());
 
-        rightPanelScrollPane.setPreferredSize(new java.awt.Dimension(950, 500));
+        rightPanelScrollPane.setPreferredSize(new java.awt.Dimension(744, 500));
 
         targetPanel.setBackground(new java.awt.Color(232, 236, 239));
-        targetPanel.setPreferredSize(new java.awt.Dimension(847, 397));
+        targetPanel.setPreferredSize(new java.awt.Dimension(740, 397));
         targetPanel.setLayout(new java.awt.BorderLayout());
         rightPanelScrollPane.setViewportView(targetPanel);
 
@@ -1976,7 +1978,7 @@ public class MainFrame extends javax.swing.JFrame {
 
         mainPanel.add(centerPanel, java.awt.BorderLayout.CENTER);
 
-        bottomPanel.setPreferredSize(new java.awt.Dimension(1200, 0));
+        bottomPanel.setPreferredSize(new java.awt.Dimension(1024, 0));
 
         javax.swing.GroupLayout bottomPanelLayout = new javax.swing.GroupLayout(bottomPanel);
         bottomPanel.setLayout(bottomPanelLayout);
@@ -2298,6 +2300,7 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JButton acceptPaymentButton;
     private javax.swing.JPanel bottomPanel;
     private javax.swing.JPanel centerPanel;
+    private javax.swing.JLabel currentUserLabel;
     private javax.swing.JScrollPane dashboardAlmostOutOfStockScrollPane;
     private org.jdesktop.swingx.JXTable dashboardAlmostOutOfStockXTable;
     private javax.swing.JPanel dashboardBottomPanel;
@@ -2331,7 +2334,6 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -2499,6 +2501,11 @@ public class MainFrame extends javax.swing.JFrame {
         dashboardHotXTable.setHighlighters(HighlighterFactory.createSimpleStriping(HighlighterFactory.CLASSIC_LINE_PRINTER));
         dashboardAlmostOutOfStockXTable.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         dashboardAlmostOutOfStockXTable.setHighlighters(HighlighterFactory.createSimpleStriping(HighlighterFactory.CLASSIC_LINE_PRINTER));
+    }
+
+    public void setCurrentUserInfo() {
+        // Set current user.
+        currentUserLabel.setText(IPOS.currentUser.getUsername());
     }
 
     private void triggerPanel(JPanel panel) {

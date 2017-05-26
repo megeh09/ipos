@@ -272,7 +272,7 @@ public class StockWithdrawalDialog extends javax.swing.JDialog {
             entity.setDate(DateUtil.current());
             entity.setFKstockId((stock).getId());
             entity.setFKpersonnelId(((Personnel) personnelComboBox.getSelectedItem()).getId());
-            entity.setFKcreatedByUserId(IPOS.currentUser);
+            entity.setFKcreatedByUserId(IPOS.currentUser.getId());
 
             controller.create(entity);
 

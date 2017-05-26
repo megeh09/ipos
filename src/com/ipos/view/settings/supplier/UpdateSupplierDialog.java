@@ -194,7 +194,7 @@ public class UpdateSupplierDialog extends javax.swing.JDialog {
             entity.setCode(codeTextField.getText());
             entity.setName(nameTextField.getText());
             entity.setDescription(descriptionTextField.getText());
-            entity.setFKcreatedByUserId(IPOS.currentUser);
+            entity.setFKcreatedByUserId(IPOS.currentUser.getId());
 
             controller.edit(entity);
 

@@ -175,7 +175,7 @@ public class AddUnitDialog extends javax.swing.JDialog {
             entity.setCode(codeTextField.getText());
             entity.setDescription(descriptionTextField.getText());
             entity.setDate(DateUtil.current());
-            entity.setFKcreatedByUserId(IPOS.currentUser);
+            entity.setFKcreatedByUserId(IPOS.currentUser.getId());
 
             controller.create(entity);
 

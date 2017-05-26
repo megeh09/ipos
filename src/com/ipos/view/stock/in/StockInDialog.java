@@ -314,7 +314,7 @@ public class StockInDialog extends javax.swing.JDialog {
             entity.setDate(DateUtil.current());
             entity.setFKsupplierId(((Supplier) supplierComboBox.getSelectedItem()).getId());
             entity.setFKitemId(((Item) itemComboBox.getSelectedItem()).getId());
-            entity.setFKcreatedByUserId(IPOS.currentUser);
+            entity.setFKcreatedByUserId(IPOS.currentUser.getId());
 
             controller.create(entity);
 

@@ -3,3 +3,6 @@ build/
 build/*
 dist/
 *.properties
+.properties
+*.class
+.class

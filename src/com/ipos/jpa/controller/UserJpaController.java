@@ -8,6 +8,8 @@ package com.ipos.jpa.controller;
 import com.ipos.entity.User;
 import com.ipos.jpa.controller.exceptions.NonexistentEntityException;
 import java.io.Serializable;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -113,6 +115,18 @@ public class UserJpaController implements Serializable {
         }
     }
 
+    public List<User> findUserMd5(String username, String password) {
+        EntityManager em = getEntityManager();
+        try {
+            return em.createNamedQuery("User.findUserByUsernameAndPassword")
+                    .setParameter("username", username)
+                    .setParameter("password", password)
+                    .getResultList();
+        } finally {
+            em.close();
+        }
+    }
+
     public User findUser(Integer id) {
         EntityManager em = getEntityManager();
         try {
@@ -134,5 +148,21 @@ public class UserJpaController implements Serializable {
             em.close();
         }
     }
-    
+
+    public String getPasswordMd5(String password) throws NoSuchAlgorithmException {
+        MessageDigest md = MessageDigest.getInstance("MD5");
+        md.update(password.getBytes());
+
+        byte byteData[] = md.digest();
+
+        // Convert the byte to hex format.
+        StringBuilder sb = new StringBuilder();
+
+        for (int i = 0; i < byteData.length; i++) {
+            sb.append(Integer.toString((byteData[i] & 0xff) + 0x100, 16).substring(1));
+        }
+
+        return sb.toString();
+    }
+
 }

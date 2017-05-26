@@ -311,7 +311,7 @@ public class StockAdjustDialog extends javax.swing.JDialog {
             entity.setExpiryDate((expiryDateDateChooser.getDate() != null) ? expiryDateDateChooser.getDate() : DateUtil.parseDate("1989-03-13").getTime());
             entity.setFKsupplierId(((Supplier) supplierComboBox.getSelectedItem()).getId());
             entity.setFKitemId(((Item) itemComboBox.getSelectedItem()).getId());
-            entity.setFKcreatedByUserId(IPOS.currentUser);
+            entity.setFKcreatedByUserId(IPOS.currentUser.getId());
 
             controller.edit(entity);
 

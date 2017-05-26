@@ -175,7 +175,7 @@ public class UpdateUnitDialog extends javax.swing.JDialog {
         try {
             entity.setCode(codeTextField.getText());
             entity.setDescription(descriptionTextField.getText());
-            entity.setFKcreatedByUserId(IPOS.currentUser);
+            entity.setFKcreatedByUserId(IPOS.currentUser.getId());
 
             controller.edit(entity);
 

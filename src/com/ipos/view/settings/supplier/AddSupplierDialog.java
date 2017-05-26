@@ -196,7 +196,7 @@ public class AddSupplierDialog extends javax.swing.JDialog {
             entity.setName(nameTextField.getText());
             entity.setDescription(descriptionTextField.getText());
             entity.setDate(DateUtil.current());
-            entity.setFKcreatedByUserId(IPOS.currentUser);
+            entity.setFKcreatedByUserId(IPOS.currentUser.getId());
 
             controller.create(entity);
 

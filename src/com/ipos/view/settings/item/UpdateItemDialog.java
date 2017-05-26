@@ -243,7 +243,7 @@ public class UpdateItemDialog extends javax.swing.JDialog {
             entity.setName(nameTextField.getText());
             entity.setDescription(descriptionTextArea.getText());
             entity.setFKunitId(((Unit) unitComboBox.getSelectedItem()).getId());
-            entity.setFKcreatedByUserId(IPOS.currentUser);
+            entity.setFKcreatedByUserId(IPOS.currentUser.getId());
 
             controller.edit(entity);
 
