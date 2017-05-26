@@ -1,5 +1,5 @@
 nbproject/
 build/
+build
 dist/
 *.properties
-built-jar.properties
