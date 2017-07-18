@@ -78,9 +78,9 @@ public class StockImplementation {
             }
 
             // Sort column.
-//            Vector data = model.getDataVector();
-//            Collections.sort(data, new ColumnSorter(1));
-//            model.fireTableStructureChanged();
+            Vector data = model.getDataVector();
+            Collections.sort(data, new ColumnSorter(1));
+            model.fireTableStructureChanged();
         } catch (Exception ex) {
             Logger.getLogger(StockImplementation.class.getName()).log(Level.SEVERE, null, ex);
         }

@@ -11,7 +11,7 @@
   </resources>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="IPOS.jar" size="298646" download="eager" />
+    <jar href="IPOS.jar" size="298780" download="eager" />
     <jar href="lib/AbsoluteLayout.jar" size="2847" download="eager" />
     <jar href="lib/eclipselink.jar" size="8384130" download="eager" />
     <jar href="lib/javax.persistence_2.1.0.v201304241213.jar" size="160564" download="eager" />
@@ -19,8 +19,6 @@
     <jar href="lib/mysql-connector-java-5.1.23-bin.jar" size="827921" download="eager" />
     <jar href="lib/org.eclipse.persistence.jpa.jpql_2.5.2.v20140319-9ad6abd.jar" size="1366247" download="eager" />
     <jar href="lib/swing-worker-1.1.jar" size="12591" download="eager" />
-    <jar href="lib/swingx-0.9.2.jar" size="1435479" download="eager" />
-    <jar href="lib/swingx-1.6.1.jar" size="1389926" download="eager" />
     <jar href="lib/swingx-core-1.6.2.jar" size="1447793" download="eager" />
   </resources>
   <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="IPOS" >

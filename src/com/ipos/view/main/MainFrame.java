@@ -2619,9 +2619,6 @@ public class MainFrame extends javax.swing.JFrame {
 
         // Set column renderer for decimals.
         stockXTable.getColumnModel().getColumn(4).setCellRenderer(bigDecimalRenderer);
-        
-        // Sort table.
-//        stockXTable.getRowSorter().toggleSortOrder(1);
     }
 
     private void setSalesTable() {
