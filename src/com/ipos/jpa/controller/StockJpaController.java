@@ -115,10 +115,10 @@ public class StockJpaController implements Serializable {
         }
     }
 
-    public List<Stock> findStockEntitiesOrderByDesc() {
+    public List<Stock> findStockEntitiesOrderByIdDesc() {
         EntityManager em = getEntityManager();
         try {
-            return em.createNamedQuery("Stock.findAllOrderByDesc").getResultList();
+            return em.createNamedQuery("Stock.findAllOrderByIdDesc").getResultList();
         } finally {
             em.close();
         }

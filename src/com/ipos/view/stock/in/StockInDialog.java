@@ -379,7 +379,7 @@ public class StockInDialog extends javax.swing.JDialog {
     }
 
     private void setCode() {
-        List<Stock> stocks = controller.findStockEntitiesOrderByDesc();
+        List<Stock> stocks = controller.findStockEntitiesOrderByIdDesc();
         String code = null;
 
         if (!stocks.isEmpty()) {

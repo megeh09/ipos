@@ -2610,17 +2610,18 @@ public class MainFrame extends javax.swing.JFrame {
 
         // Set column width.
         stockXTable.getColumnModel().getColumn(0).setPreferredWidth(100);
-        stockXTable.getColumnModel().getColumn(1).setPreferredWidth(100);
+        stockXTable.getColumnModel().getColumn(1).setPreferredWidth(300);
         stockXTable.getColumnModel().getColumn(2).setPreferredWidth(100);
-        stockXTable.getColumnModel().getColumn(3).setPreferredWidth(100);
-        stockXTable.getColumnModel().getColumn(4).setPreferredWidth(50);
+        stockXTable.getColumnModel().getColumn(3).setPreferredWidth(50);
+        stockXTable.getColumnModel().getColumn(4).setPreferredWidth(100);
         stockXTable.getColumnModel().getColumn(5).setPreferredWidth(100);
         stockXTable.getColumnModel().getColumn(6).setPreferredWidth(100);
-        stockXTable.getColumnModel().getColumn(7).setPreferredWidth(100);
-        stockXTable.getColumnModel().getColumn(8).setPreferredWidth(100);
 
         // Set column renderer for decimals.
-        stockXTable.getColumnModel().getColumn(5).setCellRenderer(bigDecimalRenderer);
+        stockXTable.getColumnModel().getColumn(4).setCellRenderer(bigDecimalRenderer);
+        
+        // Sort table.
+//        stockXTable.getRowSorter().toggleSortOrder(1);
     }
 
     private void setSalesTable() {
