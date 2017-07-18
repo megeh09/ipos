@@ -12,7 +12,7 @@
     <class>com.ipos.entity.Sales</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3307/ipos?zeroDateTimeBehavior=convertToNull"/>
-      <property name="javax.persistence.jdbc.password" value="M1k40"/>
+      <property name="javax.persistence.jdbc.password" value="1p0s@VlM0t0rparts"/>
       <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
       <property name="javax.persistence.jdbc.user" value="root"/>
     </properties>
